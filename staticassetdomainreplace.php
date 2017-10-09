@@ -17,8 +17,7 @@ class plgSystemStaticAssetDomainReplace extends JPlugin
 	{
 		/*
 		 * Plugin code goes here.
-		 * You can access database and application objects and parameters via $this->db,
-		 * $this->app and $this->params respectively
+		 * Here the html has been rendered.
 		 */
 
 		if ($this->app->isClient('site')) {

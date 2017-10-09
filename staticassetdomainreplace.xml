@@ -66,9 +66,9 @@
                 </field>
 
                 <field name="filetypes" type="textarea" cols="60" rows="3"
-					default="css,pack.js,min.js,js,bmp,gif,jpg,jpeg,ico,png,tif,tiff,svg,doc,docx,odt,pdf,rtf,txt"
+					default="css,pack.js,min.js,js,bmp,gif,jpg,jpeg,ico,png,tif,tiff,svg,odt,pdf,rtf,txt"
 					label="Filetypes"
-					description="Comma-separated filetype extensions to be included. E.x. `js,min.js,css,jpg` &lt;br&gt;Do not leave a trailing comma!" />
+					description="Comma-separated filetype extensions to be included. E.x. `js,min.js,css,jpg` &lt;br&gt;Do not leave a trailing comma or double comma!" />
 
             </fieldset>
 
