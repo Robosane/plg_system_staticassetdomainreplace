@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+    <name>plg_system_staticassetdomainreplace</name>
+    <author>Ben Klein</author>
+    <creationDate>September 2017</creationDate>
+    <copyright>Copyright (C) 2017 Ben Klein. All rights reserved.</copyright>
+    <license>All rights reserved. (For now)</license>
+    <authorEmail>robobenklein@gmail.com</authorEmail>
+    <authorUrl>unhexium.net</authorUrl>
+    <version>0.1</version>
+    <description>Yep?</description>
+    <files>
+        <filename plugin="staticassetdomainreplace">staticassetdomainreplace.php</filename>
+        <filename>staticassetdomainreplace.xml</filename>
+        <filename>index.html</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">en-GB.plg_system_staticassetdomainreplace.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="insert_domain"
+                    type="text" default=""
+                    description="Domain to insert before local urls"
+                    label="CDN Domain" />
+
+                <field name="enable_tag_link"
+                    type="radio" default="0"
+                    description="Enable replacement of urls in &amp;lt;link href&amp;gt; tags."
+                    label="Enable in &amp;lt;link&amp;gt;">
+                    <option value="0">JOFF</option>
+                    <option value="1">JON</option>
+                </field>
+
+                <field name="enable_tag_img"
+                    type="radio" default="0"
+                    description="Enable replacement of urls in &amp;lt;img src&amp;gt; tags."
+                    label="Enable in &amp;lt;img&amp;gt;">
+                    <option value="0">JOFF</option>
+                    <option value="1">JON</option>
+                </field>
+
+                <field name="enable_tag_script"
+                    type="radio" default="0"
+                    description="Enable replacement of urls in &amp;lt;script src&amp;gt; tags"
+                    label="Enable in &amp;lt;script&amp;gt;">
+                    <option value="0">JOFF</option>
+                    <option value="1">JON</option>
+                </field>
+
+                <field name="enable_tag_style_url"
+                    type="radio" default="0"
+                    description="Enable replacement of url() directives in &amp;lt;style&amp;gt; tags"
+                    label="Enable in &amp;lt;style&amp;gt;">
+                    <option value="0">JOFF</option>
+                    <option value="1">JON</option>
+                </field>
+
+                <field name="filetypes" type="textarea" cols="60" rows="3"
+					default="css,pack.js,min.js,js,bmp,gif,jpg,jpeg,ico,png,tif,tiff,svg,doc,docx,odt,pdf,rtf,txt"
+					label="Filetypes"
+					description="Comma-separated filetype extensions to be included. E.x. `js,min.js,css,jpg`" />
+
+                <field name="domain_scheme" type="radio" default="//"
+                    description="Scheme to use for the inserted domain, // uses the same scheme as page." label="HTTP/S">
+                    <option value="//">// Relative</option>
+                    <option value="http://">HTTP</option>
+                    <option value="https://">HTTPS</option>
+                </field>
+            </fieldset>
+
+        </fields>
+    </config>
+</extension>
