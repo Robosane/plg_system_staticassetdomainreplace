@@ -67,7 +67,7 @@ class plgSystemStaticAssetDomainReplace extends JPlugin
 
 		// <script> tags
 		/*
-		 * Regex: ((?:<script[^>]+(?:src)\s*=\s*)(?!['"]?(?:data|http|\/\/))['"]?)((\/[^'"\)\s>]+\/([^'"\)\s>\.]+\.(pack\.js|min\.js|js|jpg|png|gif|bmp|ico)))\??[^'"\)\s>]*)
+		 * Regex: ((?:<script[^>]+(?:src)\s*=\s*)(?!['"]?(?:data|http|\/\/))['"]?)((\/[^'"\)\s>]+\/([^'"\)\s>\.]+\.(pack\.js|min\.js|js|jpg|png|gif|bmp|ico)))[^[:alnum:]]\??[^'"\)\s>]*)
 		 * use: $1<insert>$2
 		 * source: $2
 		 * no querystring: $3
@@ -75,7 +75,7 @@ class plgSystemStaticAssetDomainReplace extends JPlugin
 		 * file extension: $5
 		 */
 		if ($plg_params->get('enable_tag_script')) {
-			$pattern = '/((?:<script[^>]+(?:src)\s*=\s*)(?![\'"]?(?:data|http|\/\/))[\'"]?)((\/[^\'"\)\s>]+\/([^\'"\)\s>\.]+\.(' . $this->r_filetypes . ')))\??[^\'"\)\s>]*)/';
+			$pattern = '/((?:<script[^>]+(?:src)\s*=\s*)(?![\'"]?(?:data|http|\/\/))[\'"]?)((\/[^\'"\)\s>]+\/([^\'"\)\s>\.]+\.(' . $this->r_filetypes . ')))[^[:alnum:]]\??[^\'"\)\s>]*)/';
 			$replacement = '${1}' . $this->domaininsert . '${2}';
 
 			$html = preg_replace($pattern, $replacement, $html);
