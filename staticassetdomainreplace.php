@@ -83,7 +83,7 @@ class plgSystemStaticAssetDomainReplace extends JPlugin
 
 		// url()s in <style> tags
 		/*
-		 * Regex: ((?:url\()(?!['"]?(?:data|http))['"]?)(([^'"\)\s>]+\/([^'"\)\s>]+\.(?:js|jpg|png|gif|bmp|ico)))[^[:alnum:]]\??[^'"\)\s>]*)
+		 * Regex: ((?:url\()(?!['"]?(?:data|http))['"]?)(([^'"\)\s>]+\/([^'"\)\s>]+\.(?:js|jpg|png|gif|bmp|ico)))[^[:alnum:]]+?\??[^'"\)\s>]*)
 		 * use: $1<insert>$2
 		 * source: $2
 		 * no querystring: $3
@@ -91,7 +91,7 @@ class plgSystemStaticAssetDomainReplace extends JPlugin
 		 * file extension: $5
 		 */
 		if ($plg_params->get('enable_tag_style_url')) {
-			$pattern = '/((?:url\()(?![\'"]?(?:data|http))[\'"]?)(([^\'"\)\s>]+\/([^\'"\)\s>]+\.(?:' . $this->r_filetypes . ')))[^[:alnum:]]\??[^\'"\)\s>]*)/';
+			$pattern = '/((?:url\()(?![\'"]?(?:data|http))[\'"]?)(([^\'"\)\s>]+\/([^\'"\)\s>]+\.(?:' . $this->r_filetypes . ')))[^[:alnum:]]+?\??[^\'"\)\s>]*)/';
 			$replacement = '${1}' . $this->domaininsert . '${2}';
 
 			$html = preg_replace($pattern, $replacement, $html);
