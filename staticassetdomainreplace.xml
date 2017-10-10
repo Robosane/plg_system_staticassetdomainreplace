@@ -2,7 +2,7 @@
 <extension version="3.1" type="plugin" group="system" method="upgrade">
     <name>System - Static Asset Domain Replace</name>
     <author>Ben Klein</author>
-    <creationDate>September 2017</creationDate>
+    <creationDate>September 2017 - October 2017</creationDate>
     <copyright>Copyright (C) 2017 Ben Klein. All rights reserved.</copyright>
     <license>All rights reserved. (For now)</license>
     <authorEmail>robobenklein@gmail.com</authorEmail>
